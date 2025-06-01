@@ -28,6 +28,7 @@ class BookingSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     listing = serializers.PrimaryKeyRelatedField(queryset=Listing.objects.all())
 
+
     class Meta:
         model = Booking
         fields = ['id', 'listing', 'user', 'check_in', 'check_out', 'guests', 'created_at', 'updated_at']
